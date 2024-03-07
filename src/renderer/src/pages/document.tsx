@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import {ToC} from "../components/ToC"
+import { Editor } from "../components/Editor";
 export function Document(){
     return (
         <main className="flex-1 flex py-12 px-10 gap-8">
@@ -17,7 +18,7 @@ export function Document(){
             </aside>
 
             <section className="flex-1 flex flex-col items-center">
-                
+                <Editor/>
             </section>
         </main>
     )

@@ -35,7 +35,8 @@ module.exports = {
           "-webkit-app-region": "no-drag"
         }
       })
-    })
+    }),
+    require('@tailwindcss/typography'),
   ],
 }
 
