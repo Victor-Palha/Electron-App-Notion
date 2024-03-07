@@ -1,10 +1,16 @@
 import clsx from 'clsx'
+import * as Clb from "@radix-ui/react-collapsible";
+
 import { Code, CaretDoubleRight, TrashSimple } from 'phosphor-react'
 import * as Breadcrumbs from './Breadcrumbs'
 
-export function Header() {
+
+type HeaderProps = {
+  isSideBarOpen: boolean
+}
+export function Header({ isSideBarOpen }: HeaderProps) {
   const isMacOS = process.platform === 'darwin'
-  const isSidebarOpen = true
+  const isSidebarOpen = isSideBarOpen
 
   return (
     <div
@@ -18,14 +24,15 @@ export function Header() {
         },
       )}
     >
-      <button
+
+      <Clb.Trigger
         className={clsx('h-5 w-5 text-rotion-200 hover:text-rotion-50', {
           hidden: isSidebarOpen,
           block: !isSidebarOpen,
         })}
       >
         <CaretDoubleRight className="h-4 w-4" />
-      </button>
+      </Clb.Trigger>
 
       <>
         <Breadcrumbs.Root>
