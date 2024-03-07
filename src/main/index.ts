@@ -1,9 +1,11 @@
+import "./ipc"
 import { app, shell, BrowserWindow, ipcMain } from 'electron'
 import { join, resolve } from 'node:path'
 import { electronApp, optimizer, is } from '@electron-toolkit/utils'
 import { createFileRoute, createURLRoute } from 'electron-router-dom'
 
-const icon = resolve(__dirname, "icon.png")
+const icon = "../../resources/icon.png"
+
 
 function createWindow(): void {
   // Create the browser window.
