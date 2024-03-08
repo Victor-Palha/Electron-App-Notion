@@ -11,7 +11,8 @@ export function Sidebar() {
   const isMacOS = process.platform === 'darwin'
 
   async function fechDocuments(){
-    return await window.api.fechDocuments()
+    const {data} = await window.api.fechDocuments()
+    return data
   }
 
   const {data, isLoading, isError} = useQuery({queryKey: ['documents'], queryFn: fechDocuments})
@@ -53,7 +54,7 @@ export function Sidebar() {
             <Navigation.SectionTitle>Workspace</Navigation.SectionTitle>
             <Navigation.SectionContent>
               {data && data.map((document: any)=>(
-                <Navigation.Link key={document.id}>{document.name}</Navigation.Link>
+                <Navigation.Link key={document.id}>{document.title}</Navigation.Link>
               ))}
             </Navigation.SectionContent>
           </Navigation.Section>
