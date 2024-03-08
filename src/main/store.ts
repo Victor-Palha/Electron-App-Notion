@@ -8,3 +8,5 @@ export const store = new Store<StoreType>({
         documents: {}
     }
 })
+
+console.log(store.path)

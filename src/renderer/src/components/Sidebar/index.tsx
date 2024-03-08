@@ -15,7 +15,7 @@ export function Sidebar() {
     return data
   }
 
-  const {data, isLoading, isError} = useQuery({queryKey: ['documents'], queryFn: fechDocuments})
+  const {data, isLoading, isError} = useQuery({queryKey: ['documents'], queryFn: fechDocuments, refetchOnWindowFocus: true})
 
   return (
     <Clb.Content className="bg-rotion-800 flex-shrink-0 border-r border-rotion-600 h-screen relative group data-[state=open]:animate-slideIn data-[state=closed]:animate-slideOut overflow-hidden">
@@ -54,7 +54,11 @@ export function Sidebar() {
             <Navigation.SectionTitle>Workspace</Navigation.SectionTitle>
             <Navigation.SectionContent>
               {data && data.map((document: any)=>(
-                <Navigation.Link key={document.id}>{document.title}</Navigation.Link>
+                <Navigation.Link 
+                  to={"/document/"+document.id} 
+                  key={document.id}>
+                    {document.title}
+                  </Navigation.Link>
               ))}
             </Navigation.SectionContent>
           </Navigation.Section>
