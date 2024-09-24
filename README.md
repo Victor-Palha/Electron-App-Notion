@@ -1,6 +1,9 @@
-# notion-start
+# Notion-Electron
 
-An Electron application with React and TypeScript
+An Electron application with React and TypeScript to use Notion as a desktop app.
+
+## Image Preview
+![Notion-Electron](./Screenshot%202024-09-24%20at%2020.11.54.png)
 
 ## Recommended IDE Setup
 

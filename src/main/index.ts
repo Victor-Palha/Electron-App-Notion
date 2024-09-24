@@ -5,8 +5,6 @@ import { join, resolve } from 'node:path'
 import { electronApp, optimizer, is } from '@electron-toolkit/utils'
 import { createFileRoute, createURLRoute } from 'electron-router-dom'
 
-const icon = "../../resources/icon.png"
-
 
 function createWindow(): void {
   // Create the browser window.
@@ -21,7 +19,7 @@ function createWindow(): void {
       x: 20,
       y: 20
     },
-    ...(process.platform === 'linux' ? { icon } : {}),
+    ...(process.platform === 'linux' ? { } : {}),
     webPreferences: {
       preload: join(__dirname, '../preload/index.js'),
       sandbox: false
@@ -49,9 +47,6 @@ function createWindow(): void {
   }
 }
 
-if (process.platform === "darwin"){
-  app.dock.setIcon(icon)
-}
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
